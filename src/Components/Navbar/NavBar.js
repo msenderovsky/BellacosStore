@@ -8,7 +8,7 @@ const NavBar = () =>{
     return (
         <Navbar bg="primary" variant="dark">
             <Container>
-                <img src={logo} style={{paddingRight:'10px'}}></img>
+                <img src={logo} alt="" style={{paddingRight:'10px'}}></img>
                 <Navbar.Brand href="#inicio">Inicio</Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link href="#shop"><CartWidget/></Nav.Link>
