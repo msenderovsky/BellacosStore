@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-function ItemCount({ stock, initial, onAdd }){
+function ItemCount({ stock, initial, descripcion, precio, onAdd }){
 
     const [count,setCount]=useState(1)
     
@@ -17,11 +17,15 @@ function ItemCount({ stock, initial, onAdd }){
     }
 
     return (
-        <div>
-            {count}
+        <div className="remera">
+            <h3 className="descripcion">{descripcion}</h3>
+            <h4>Precio: ${precio}</h4>
+            <p>Cantidad: {count}</p>
+            <p>Stock: {stock}</p>
             <button onClick={handleCountIncrease}>+</button>
             <button onClick={handleCountDecrease}>-</button>
             <button onClick={onAdd}>Agregar al carro</button>
+            <button>Comprar</button>
          </div>
     )
 }
