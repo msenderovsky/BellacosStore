@@ -1,26 +1,22 @@
 import { useState, useEffect } from 'react'
-import ItemCount from './ItemCount'
-import { getFetch } from '../../helper/productos'
+import { getFetch } from '../../helper/mock'
+import ItemList from './ItemList'
 
 const ItemListContainer =({greeting}) =>{
-    
+    const [loading, setLoading] = useState(true)
     const [remeras, setRemeras] = useState([])
 
     useEffect(()=>{
         getFetch
         .then(resp => setRemeras(resp))
         .catch(err => console.log(err))
-        .finally (()=>console.log('final del promise'))
+        .finally (()=>setLoading(false))
     }, [])
     
     
     return (
-            <div className="ItemListContainer">
-                <h1>{greeting}</h1>
-                <div className="tarjetas">
-                {remeras.map(remera=> <ItemCount stock={10} initial={1} key={remera.id} descripcion={remera.descripcion} precio={remera.precio} foto={remera.foto}/>)}
-                {useState[0]}
-            </div>
+        <div>
+            {loading ? <h2 className="load"> Cargando </h2>: <ItemList remeras={remeras}/>}
         </div>
     )
 }
