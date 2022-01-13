@@ -3,17 +3,18 @@ import logo from '../../assets/logo.png'
 import Container from 'react-bootstrap/Container'
 import { Navbar, Nav } from 'react-bootstrap';
 import CartWidget from './CartWidget';
+import {Link} from 'react-router-dom'
 
 const NavBar = () =>{
     return (
         <Navbar bg="primary" variant="dark">
             <Container>
-                <img src={logo} alt="" style={{paddingRight:'10px'}}></img>
-                <Navbar.Brand href="#inicio">Inicio</Navbar.Brand>
+                <Link to='/'> <img src={logo} alt="" style={{paddingRight:'10px'}}></img></Link>
+                <Link style={{color: "white", padding:'10px'}} to='/'>Inicio</Link>
                 <Nav className="me-auto">
-                    <Nav.Link href="#shop"><CartWidget/></Nav.Link>
-                    <Nav.Link href="#disenos">Diseños</Nav.Link>
-                    <Nav.Link href="#contacto">Contacto</Nav.Link>
+                    <Link style={{color: "white", padding:'10px'}} to="/categoria/diseños">Diseños</Link>
+                    <Link style={{color: "white", padding:'10px'}} to="/categoria/memes">Memes</Link>
+                    <Link style={{color: "white", padding:'10px'}} to='/cart'><CartWidget/></Link>
                 </Nav>
             </Container>
         </Navbar>

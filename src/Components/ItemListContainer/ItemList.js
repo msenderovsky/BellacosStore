@@ -1,10 +1,10 @@
 import Item from './Item'
 import { Row } from 'react-bootstrap';
-function ItemList({remeras}){
+function ItemList({productos}){
     return(
-        <div>
+        <div className="productos">
             <Row className="">
-            {remeras.map(remera=> (<Item key={remera.id} foto={remera.foto} precio={remera.precio} titulo={remera.titulo} descripcion={remera.descripcion} stock={remera.stock}/>
+            {productos.map(producto=> (<Item key={producto.id} foto={producto.foto} precio={producto.precio} titulo={producto.titulo} descripcion={producto.descripcion} stock={producto.stock}/>
             ))}
             </Row>
         </div>
