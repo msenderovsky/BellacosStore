@@ -2,7 +2,7 @@ import { Card, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount'
 
-function Item({  id, foto, precio, titulo, descripcion, stock}){
+function Item({id, foto, precio, titulo, descripcion, stock}){
     return(
         <Col>
         <Card className="cardStyle">
