@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { getFetch } from '../../helper/mock'
 import ItemList from './ItemList'
 
-const ItemListContainer =({greeting}) =>{
+const ItemListContainer =() =>{
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
 
@@ -27,7 +27,7 @@ const ItemListContainer =({greeting}) =>{
     
     
     return (
-        <div>
+        <div id="itemListContainer">
             {loading ? <h2 className="load"> Cargando </h2>: <ItemList productos={productos}/>}
         </div>
     )

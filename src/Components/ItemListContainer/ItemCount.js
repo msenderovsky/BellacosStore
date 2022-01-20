@@ -2,9 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-function ItemCount({ onAdd, stock=1 }){
+function ItemCount({ onAdd, stock=10 }){
 
     const [count,setCount]=useState(1)
+    const [show,setShow]=useState(true)
 
     const handleCountIncrease=()=>{
         if (count<stock)
@@ -20,15 +21,30 @@ function ItemCount({ onAdd, stock=1 }){
         onAdd(count)
     }
 
+    function buttonDisappear(){
+        setShow(false)
+    }
+
     return (
         <div className="remera">
-            <p>Stock: {stock}</p>
+            <p style={{color:"black"}}>Stock: {stock}</p>
+            <p style={{color:"black"}}>Cantidad:</p>
+            <button onClick={buttonDisappear}>Finalizar compra</button>
+            { show ? <>
             <button onClick={handleCountDecrease}>-</button>
-            <p>Cantidad: {count}</p>
+            {count}
             <button onClick={handleCountIncrease}>+</button>
-            <Link to={`/cart`}>
-                <button onClick={handleClick}>Comprar</button>
-            </Link>
+            </>
+            :<>
+                <Link to={`/cart`}>
+                    <button onClick={handleClick}>Comprar</button>
+                </Link>
+                <Link to={`/`}>
+                    <button>Inicio</button>
+                </Link> 
+            </>
+            }
+            
          </div>
     )
 }
