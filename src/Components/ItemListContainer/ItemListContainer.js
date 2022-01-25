@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { getFetch } from '../../helper/mock'
 import ItemList from './ItemList'
 import PulseLoader from "react-spinners/PulseLoader";
+import './ItemListContainer.css'
 
 const ItemListContainer =() =>{
     const [loading, setLoading] = useState(true)

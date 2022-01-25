@@ -11,8 +11,8 @@ const NavBar = () =>{
         <Navbar bg="dark" variant="dark">
             <Container>
                 <Link to='/'> <img src={logo} alt="" style={{paddingRight:'10px'}}></img></Link>
-                <Link style={{color: "white", padding:'10px'}} to='/'>Inicio</Link>
                 <Nav className="me-auto">
+                    <Link style={{color: "white", padding:'10px'}} to='/'>Inicio</Link>
                     <Link style={{color: "white", padding:'10px'}} to="/categoria/diseños">Diseños</Link>
                     <Link style={{color: "white", padding:'10px'}} to="/categoria/memes">Memes</Link>
                     <Link style={{color: "white", padding:'10px'}} to='/cart'><CartWidget/></Link>

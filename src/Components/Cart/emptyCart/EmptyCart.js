@@ -1,12 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 function EmptyCart(){
 
     return(
         <div>
-        <h3> El carro está vacío </h3>
-        <Link to="/"> <button> Volver al Inicio</button></Link>
+        <h3 style={{textAlign:"center"}}> El carro está vacío </h3>
+        <Link to="/"> <Button variant="primary"> Volver al Inicio</Button></Link>
         </div>
     )
 }
