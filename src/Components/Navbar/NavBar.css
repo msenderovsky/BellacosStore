@@ -1,0 +1,22 @@
+.carritoObject{
+    font-size:25px;
+}
+
+.carritoObject:hover {
+    background-color:yellow;
+    border-radius: 100%;
+    color:black;
+}
+
+.carrito {
+    display:flex;
+}
+
+.cantidad {
+    border-radius: 50%;
+    background-color: red;
+    height:20px;
+    width: 20px;
+    font-size: 12px;
+    padding-top: 0.15px;
+}

@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getFetch } from '../../helper/mock'
 import ItemList from './ItemList'
+import PulseLoader from "react-spinners/PulseLoader";
 
 const ItemListContainer =() =>{
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
+    const [color,setColor]=useState("#F5A623")
 
     const {idCategoria} = useParams()
 
@@ -28,7 +30,11 @@ const ItemListContainer =() =>{
     
     return (
         <div id="itemListContainer">
-            {loading ? <h2 className="load"> Cargando </h2>: <ItemList productos={productos}/>}
+            {loading ? 
+            <>
+                <h2 className="load"> Cargando </h2> 
+                <PulseLoader color={color}/>
+            </>: <ItemList productos={productos}/>}
         </div>
     )
 }

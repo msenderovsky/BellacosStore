@@ -23,13 +23,24 @@ export const CartContextProvider =({children})=>{
         setCartList([...cartList,items])
     }
     
-    function deleteItem(item){
-        const indice=cartList.findIndex(i=>i.id===item.id)
-        cartList.splice(indice,1)
+    function deleteItem(id){
+        setCartList(cartList.filter(item => item.id !== id))
     }
 
     function cleanCart(){
         setCartList([])
+    }
+
+    function totalItems(){
+        const totalPrice=cartList.map(totalValue=>totalValue.cantidad * totalValue.precio).reduce((prev,curr)=>prev+curr,0)
+        console.log(totalPrice)
+        console.log("test")
+        return totalPrice
+    }
+
+    function showTotal(){
+        const totalItems=cartList.map(mostrar=>mostrar.cantidad).reduce((prev,curr)=>prev+curr,0)
+        return totalItems
     }
 
     return(
@@ -37,7 +48,9 @@ export const CartContextProvider =({children})=>{
             cartList,
             addToCart,
             cleanCart,
-            deleteItem
+            deleteItem,
+            totalItems,
+            showTotal,
         }}>
             {children}
         </cartContext.Provider>

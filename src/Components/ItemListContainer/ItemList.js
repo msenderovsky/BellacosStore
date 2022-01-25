@@ -1,6 +1,8 @@
 import Item from './Item'
 import { Row } from 'react-bootstrap';
-function ItemList({productos}){
+import {memo} from 'react'
+
+const ItemList = memo (({productos})=>{
     return(
         <div className="productos">
             <Row className="">
@@ -10,5 +12,6 @@ function ItemList({productos}){
         </div>
     )
 }
+, (oldProps,newProps)=> oldProps.productos.length===newProps.productos.length)
 
 export default ItemList

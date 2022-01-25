@@ -1,6 +1,5 @@
 import { Card, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ItemCount from './ItemCount'
 import './Item.css'
 
 function Item({id, foto, precio, titulo, descripcion, stock}){
