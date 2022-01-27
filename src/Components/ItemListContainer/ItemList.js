@@ -6,7 +6,7 @@ const ItemList = memo (({productos})=>{
     return(
         <div className="productos">
             <Row className="">
-            {productos.map(producto=> (<Item key={producto.id} id={producto.id} foto={producto.foto} precio={producto.precio} titulo={producto.titulo} descripcion={producto.descripcion} stock={producto.stock}/>
+            {productos.map(producto=> (<Item key={producto.id} id={producto.id} foto={producto.Foto} precio={producto.Precio} titulo={producto.Nombre} descripcion={producto.Descripción} stock={producto.Stock}/>
             ))}
             </Row>
         </div>

@@ -3,6 +3,7 @@ import ItemCount from '../ItemListContainer/ItemCount'
 import {useCartContext} from '../../context/cartContext'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import './ItemDetail.css'
 
 const ItemDetail = ({producto}) => {
     const {cartList, addToCart}=useCartContext()
@@ -17,12 +18,12 @@ const ItemDetail = ({producto}) => {
 
     return (
         <div className="ItemDetail">
-            <img src={producto.foto} alt={producto.titulo}></img>
-            <p style={{color:"black"}}>Título: {producto.titulo}</p>
-            <p style={{color:"black"}}>Precio: ${producto.precio}</p>
+            <img className= "fotoDetail" src={producto.Foto} alt={producto.Nombre}></img>
+            <p style={{color:"black"}}>Título: {producto.Nombre}</p>
+            <p style={{color:"black"}}>Precio: ${producto.Precio}</p>
 
             {show ? <ItemCount onAdd={onAdd} /> : 
-            <div class="text-center">
+            <div className="text-center">
              <Link  to="/cart"><Button variant="success" style={{marginRight:10}}>Finalizar Compra</Button></Link>
              <Link to="/"><Button style={{marginLeft:10}}>Seguir Comprando</Button></Link>
              </div> 

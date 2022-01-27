@@ -15,7 +15,7 @@ function Item({id, foto, precio, titulo, descripcion, stock}){
                             <Card.Title className="cardTitle" style={{textAlign:"center"}}>{titulo}</Card.Title>
                             <Card.Text className="cardText">{descripcion}</Card.Text>
                             <Link to={`/detalle/${id}`}>
-                                <div class="text-center">
+                                <div className="text-center">
                                 <Button className="cardBoton" style={{width:100}}>Detalles</Button>
                                 </div>
                             </Link>

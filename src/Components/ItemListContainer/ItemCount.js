@@ -24,7 +24,7 @@ function ItemCount({ onAdd, stock=10 }){
         <div className="remera">
             <p style={{color:"black"}}>Stock: {stock}</p>
             <p style={{color:"black"}}>Cantidad:{count}</p>
-            <div class="text-center">
+            <div className="text-center">
                 <Button variant="outline-secondary" onClick={countDecrease} style={{marginRight:10}}>-</Button>
                 {count}
                 <Button variant="outline-secondary" onClick={countIncrease} style={{marginLeft:10}}>+</Button>
