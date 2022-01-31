@@ -57,8 +57,6 @@ const ItemListContainer =() =>{
             .finally (()=>setLoading(false))
         }*/
     }, [])
-    
-    console.log(productos)
 
     return (
         <div id="itemListContainer">

@@ -32,9 +32,7 @@ export const CartContextProvider =({children})=>{
     }
 
     function totalItems(){
-        const totalPrice=cartList.map(totalValue=>totalValue.cantidad * totalValue.precio).reduce((prev,curr)=>prev+curr,0)
-        console.log(totalPrice)
-        console.log("test")
+        const totalPrice=cartList.reduce((prev,curr)=>prev+curr.Precio*curr.cantidad,0)
         return totalPrice
     }
 

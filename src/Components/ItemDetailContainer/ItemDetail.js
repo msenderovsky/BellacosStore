@@ -11,11 +11,8 @@ const ItemDetail = ({producto}) => {
 
     function onAdd(cant){
         addToCart({...producto, cantidad:cant})  
-        console.log(cant)
         setShow(false)
     }
-    console.log(cartList)
-
     return (
         <div className="ItemDetail">
             <img className= "fotoDetail" src={producto.Foto} alt={producto.Nombre}></img>
