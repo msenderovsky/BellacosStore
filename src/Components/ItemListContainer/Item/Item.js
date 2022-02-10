@@ -5,8 +5,8 @@ import './Item.css'
 function Item({id, foto, precio, titulo, descripcion, stock}){
 
     return(
-            <Col fluid>
-                <Card className="cardStyle" style={{width:215, marginBottom:20, marginLeft:15, marginTop:20}}>
+            <div className="grid">
+                <Card className="cardStyle" style={{width:215, marginBottom:10, marginTop:20}}>
                     <div className="centerThings">
                         <Card.Img className="cardImg" style={{height:200, width:215, justifyContent:'center'}} src={foto}/>
                     </div>
@@ -22,7 +22,7 @@ function Item({id, foto, precio, titulo, descripcion, stock}){
                         </Card.Body>
                     </div>
                 </Card>
-            </Col>
+            </div>
     )
 }
 

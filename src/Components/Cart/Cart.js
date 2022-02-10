@@ -41,8 +41,8 @@ const Cart = () => {
                     <h5 style={{color:"black"}}>Total a pagar: ${totalItems()}</h5>
                 </>
                 <h5 style={{color:"black"}}> Total de Items: {mostrarCantidad()}</h5>
-                <Button variant="danger" onClick={() => cleanCart()} style={{ marginLeft: 10, marginTop: 10 }}>Eliminar todos</Button>
-                <Button className="boton-pago" variant="success"><Link to="/checkout">Ir al pago</Link></Button></>
+                <Button variant="danger" onClick={() => cleanCart()} style={{ margin: 10, marginTop: 10 }}>Eliminar todos</Button>
+                <Button className="boton-pago" variant="success"><Link  className="link-pago"  to="/checkout">Ir al pago</Link></Button></>
             </div>
     )
 }

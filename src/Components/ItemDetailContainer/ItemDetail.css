@@ -1,5 +1,5 @@
 .fotoDetail{
-    align-items: center;
-    display: flex;
+    margin:auto;
+    display:block;
+    width: 15%;
 }
-
