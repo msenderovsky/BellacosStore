@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 function ItemCount({ onAdd, stock=10 }){
 
@@ -18,12 +20,14 @@ function ItemCount({ onAdd, stock=10 }){
 
     function handleClick(){
         onAdd(count)
+        const carritoActualizado= () => toast.success('Elementos agregados al carrito');
+        carritoActualizado()
     }
 
     return (
         <div className="remera">
             <p style={{color:"black"}}>Stock: {stock}</p>
-            <p style={{color:"black"}}>Cantidad:{count}</p>
+            <p style={{color:"black"}}>Cantidad: {count}</p>
             <div className="text-center">
                 <Button variant="outline-secondary" onClick={countDecrease} style={{marginRight:10}}>-</Button>
                 {count}

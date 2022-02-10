@@ -1,4 +1,4 @@
-import { Card, Container, Col, Button } from 'react-bootstrap';
+import { Card, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Item.css'
 
@@ -6,7 +6,7 @@ function Item({id, foto, precio, titulo, descripcion, stock}){
 
     return(
             <Col fluid>
-                <Card className="cardStyle" style={{width:215}}>
+                <Card className="cardStyle" style={{width:215, marginBottom:20}}>
                     <div className="centerThings">
                         <Card.Img className="cardImg" style={{height:200, width:215, justifyContent:'center'}} src={foto}/>
                     </div>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import './ItemDetail.css'
 
 const ItemDetail = ({producto}) => {
-    const {cartList, addToCart}=useCartContext()
+    const {addToCart}=useCartContext()
     const [show, setShow]= useState(true)
 
     function onAdd(cant){
@@ -15,17 +15,19 @@ const ItemDetail = ({producto}) => {
     }
     return (
         <div className="ItemDetail">
-            <img className= "fotoDetail" src={producto.Foto} alt={producto.Nombre}></img>
-            <p style={{color:"black"}}>Título: {producto.Nombre}</p>
-            <p style={{color:"black"}}>Precio: ${producto.Precio}</p>
-
-            {show ? <ItemCount onAdd={onAdd} /> : 
-            <div className="text-center">
-             <Link  to="/cart"><Button variant="success" style={{marginRight:10}}>Finalizar Compra</Button></Link>
-             <Link to="/"><Button style={{marginLeft:10}}>Seguir Comprando</Button></Link>
-             </div> 
-             }
-            
+            <div className="fotoContainer">
+                <img className="fotoDetail" src={producto.Foto} alt={producto.Nombre}></img>
+            </div>
+            <p className="titulo" style={{ color: "black" }}>Título: {producto.Nombre}</p>
+            {show ?
+                <>
+                    <ItemCount onAdd={onAdd} />
+                    <p style={{ color: "black" }}>Precio por unidad: ${producto.Precio}</p>
+                </>
+                :<div className="text-center">
+                    <Link to="/cart"><Button variant="success" style={{ marginRight: 10 }}>Finalizar Compra</Button></Link>
+                    <Link to="/"><Button style={{ marginLeft: 10 }}>Seguir Comprando</Button></Link>
+                </div>}
         </div>
     )
 }

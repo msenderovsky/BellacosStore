@@ -5,13 +5,13 @@ import './NavBar.css'
 
 const CartWidget = () => {
 
-    const {cartList , cleanCart , deleteItem, totalItems , showTotal} = useCartContext()
+    const {cartList , cleanCart , deleteItem, totalItems , mostrarCantidad} = useCartContext()
   
         
     return (
         <div className="carrito">
             <FiShoppingCart className="carritoObject"/>  
-            {cartList.length > 0 && <p className="cantidad">{showTotal()}</p> }
+            {cartList.length > 0 && <p className="cantidad">{mostrarCantidad()}</p> }
         </div>
     )
 }
