@@ -28,7 +28,7 @@ const ItemListContainer =() =>{
             .catch(err=>err)
             .finally(()=>setLoading(false))
         }
-    }, [])
+    }, [idCategoria])
 
     return (
         <div id="itemListContainer">

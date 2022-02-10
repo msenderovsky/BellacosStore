@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Formik , Form , Field , ErrorMessage } from 'formik';
 import { FiShoppingCart } from 'react-icons/fi'
 import './PaymentDetail.css'
+import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import { getFirestore, query, collection, getDocs , where, addDoc, documentId, writeBatch } from 'firebase/firestore'
 
@@ -241,7 +242,7 @@ const PaymentDetail = () => {
                                       <ErrorMessage name="confTelefono" component={()=> <div className="error-p">{errors.confTelefono}</div>} />
                               </div>
       
-                              <button className="btn btn-success" type="submit"><FiShoppingCart/>Finalizar Compra</button>
+                              <button className="btn btn-success" type="submit" style={{marginTop:10, marginLeft:20}}><FiShoppingCart/>Finalizar Compra</button>
       
                           </section>
                       </Form>
@@ -253,7 +254,7 @@ const PaymentDetail = () => {
                 (<div className="contenedorCarrito" key={prod.id}>
                     <img src={prod.img}/>
                     <li key={prod.id}>  {prod.Nombre} - Unidades: {prod.cantidad} Precio: $ {(prod.Precio) * prod.cantidad}
-                        <button className="btn btn-danger" onClick={() => deleteItem(prod.id)}>Eliminar item</button>
+                        <button className="btn btn-danger" style={{ marginLeft:10}} onClick={() => deleteItem(prod.id)}>Eliminar item</button>
                     </li>
                 </div>)
                 ) }
@@ -298,11 +299,7 @@ const PaymentDetail = () => {
                                     </tbody>
                                 </Table>
                                 
-                                <p style={{color:'black'}}>{datosFormulario.nombre}</p>
-                                <p style={{color:'black'}}>{datosFormulario.apellido}</p>
-                                <p style={{color:'black'}}>{datosFormulario.telefono}</p>
-                                <p style={{color:'black'}}>{datosFormulario.email}</p>
-                                <Link to="/"><button onClick={()=> cleanCart()}>Volver al Inicio</button></Link>
+                                <Link to="/"><Button variant="success" onClick={()=> cleanCart()}>Volver al Inicio</Button></Link>
                             </div>
                         </div>
                     </section>           

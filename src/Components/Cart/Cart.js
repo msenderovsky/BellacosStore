@@ -6,7 +6,6 @@ import Table from 'react-bootstrap/Table'
 
 import { Link } from 'react-router-dom'
 import { useCartContext } from "../../context/cartContext";
-import { FiAlignCenter } from 'react-icons/fi';
 
 const Cart = () => {
     const { cartList, deleteItem, mostrarCantidad, cleanCart, totalItems, totalPorItem } = useCartContext()

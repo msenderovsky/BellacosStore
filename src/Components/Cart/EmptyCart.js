@@ -6,7 +6,7 @@ function EmptyCart(){
 
     return(
         <div className='body' style={{ display: "block" , justifyContent: 'center'}}>
-        <h3 style={{textAlign:"center"}}> El carro está vacío </h3>
+        <h3 style={{textAlign:"center"}}>  Carro de productos vacío </h3>
         <Link to="/"> <Button variant="primary"> Volver al Inicio</Button></Link>
         </div>
     )

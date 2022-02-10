@@ -1,4 +1,4 @@
-import Item from './Item'
+import Item from './Item/Item'
 import { Row } from 'react-bootstrap';
 import {memo} from 'react'
 
