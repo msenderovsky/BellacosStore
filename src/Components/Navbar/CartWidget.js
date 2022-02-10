@@ -11,7 +11,7 @@ const CartWidget = () => {
     return (
         <div className="carrito">
             <FiShoppingCart className="carritoObject"/>  
-            {cartList.length > 0 && <p className="cantidad">{mostrarCantidad()}</p> }
+            {cartList.length > 0 && <p>{mostrarCantidad()}</p> }
         </div>
     )
 }

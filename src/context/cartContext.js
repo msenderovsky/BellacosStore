@@ -10,7 +10,6 @@ export function useCartContext(){
 export const CartContextProvider =({children})=>{
 
     const [cartList, setCartList]= useState([])
-    const [cartTotal, setCartTotal]= useState([])
    
     
     function addToCart(items){
@@ -38,20 +37,13 @@ export const CartContextProvider =({children})=>{
 
     function totalItems(){
         const totalPrice = cartList.map(valor => valor.cantidad * valor.Precio).reduce((prev,curr)=> prev + curr,0)
-        console.log("total de un item: "+totalPrice)
         return totalPrice
     }
 
-    function totalPorItem(){
-        const total = cartList.map(mostrar => mostrar.cantidad * mostrar.Precio)
-        console.log("total por item: "+total)
-        return total
-    }
     
 
     function mostrarCantidad(){
         const mostrar=cartList.map(mostrar=>mostrar.cantidad).reduce((prev,curr)=>prev+curr,0)
-        console.log("Total de items "+mostrar)
         return mostrar
     }
 
@@ -60,15 +52,11 @@ export const CartContextProvider =({children})=>{
         <cartContext.Provider value={{
             cartList,
             setCartList,
-            setCartTotal,
-            cleanCart,
             addToCart,
             cleanCart,
             totalItems,
             deleteItem,
-            totalItems,
             mostrarCantidad,
-            totalPorItem,
         }}>
             {children}
         </cartContext.Provider>

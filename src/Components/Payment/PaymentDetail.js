@@ -252,7 +252,7 @@ const PaymentDetail = () => {
               <div>
               {cartList.map(prod =>  
                 (<div className="contenedorCarrito" key={prod.id}>
-                    <img src={prod.img}/>
+                    <img src={prod.img} alt=""/>
                     <li key={prod.id}>  {prod.Nombre} - Unidades: {prod.cantidad} Precio: $ {(prod.Precio) * prod.cantidad}
                         <button className="btn btn-danger" style={{ marginLeft:10}} onClick={() => deleteItem(prod.id)}>Eliminar item</button>
                     </li>
@@ -269,8 +269,8 @@ const PaymentDetail = () => {
                     <section>
                         <div>
                             <h2 style={{color:'black'}}>¡Pago realizado!</h2>
-                            <p style={{color:'black'}}>Gracias por su compra {datosFormulario.nombre}</p>
-                            <p style={{color:'black'}}>El número de orden de su pedido de compra es {orderId}</p>
+                            <p style={{color:'black'}}>Gracias por su compra {datosFormulario.nombre} {datosFormulario.apellido}</p>
+                            <p style={{color:'black'}}>El código de orden de su pedido de compra es {orderId}</p>
                         </div>
                   
                         <div className="grid-bill">

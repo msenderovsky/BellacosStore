@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { useCartContext } from "../../context/cartContext";
 
 const Cart = () => {
-    const { cartList, deleteItem, mostrarCantidad, cleanCart, totalItems, totalPorItem } = useCartContext()
+    const { cartList, deleteItem, mostrarCantidad, cleanCart, totalItems } = useCartContext()
 
     return(
         (cartList.length===0) ?
