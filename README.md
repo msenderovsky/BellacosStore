@@ -27,3 +27,6 @@ Toastify fue usado para la notificación del usuario ante eventos (eliminación 
 Formik fue usado para la creación de formularios en la ventana de confirmación de venta de productos
 
 Firebase fue usado para el almacenamiento de los productos y las ordenes de compra
+
+
+[La demo se encuentra acá](https://bellacos-store.netlify.app/)
