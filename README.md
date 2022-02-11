@@ -1,4 +1,4 @@
-# Como Iniciar
+## Como Iniciar
 
 Para la correcta ejecución de este proyecto se necesita la instalación de la dependencia NPM con el comando 
 
